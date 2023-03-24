@@ -1,2 +1,2 @@
-## NestJS 
-NestJS with mongoose and files upload
+## NestJS - Music-Platform project
+NestJS with mongoose and files-upload
