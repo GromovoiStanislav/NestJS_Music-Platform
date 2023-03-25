@@ -3,6 +3,7 @@ import { TrackModule } from "./track/track.module";
 import { MongooseModule } from "@nestjs/mongoose";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { join } from "node:path";
+import { AlbumModule } from './album/album.module';
 
 
 @Module({
@@ -13,7 +14,8 @@ import { join } from "node:path";
     }),
     //ServeStaticModule.forRoot({rootPath: join(__dirname, '..', 'static')}),
     MongooseModule.forRoot("mongodb://localhost/nest"),
-    TrackModule
+    TrackModule,
+    AlbumModule
   ]
 })
 export class AppModule implements OnModuleInit {

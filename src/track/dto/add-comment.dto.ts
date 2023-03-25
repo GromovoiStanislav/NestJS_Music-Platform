@@ -1,6 +1,6 @@
 import {ObjectId} from "mongoose";
 
-export class CreateCommentDto {
+export class AddCommentDto {
   readonly username: string;
   readonly text: string;
   readonly trackId: ObjectId;

@@ -4,7 +4,7 @@ import { Model, ObjectId } from "mongoose";
 import { Track, TrackDocument } from "./schemas/track.schema";
 import { Comment, CommentDocument } from "./schemas/comment.schema";
 import { CreateTrackDto } from "./dto/create-track.dto";
-import { CreateCommentDto } from "./dto/create-comment.dto";
+import { AddCommentDto } from "./dto/add-comment.dto";
 import { FilesService, FileType } from "../files/files.service";
 
 @Injectable()
@@ -40,7 +40,7 @@ export class TrackService {
   }
 
 
-  async addComment(dto: CreateCommentDto): Promise<Comment> {
+  async addComment(dto: AddCommentDto): Promise<Comment> {
     const track = await this.trackModel.findById(dto.trackId);
     const comment = await this.commentModel.create({ ...dto });
     track.comments.push(comment);

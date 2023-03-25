@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Query, UploadedFiles, UseIn
 import { TrackService } from "./track.service";
 import { CreateTrackDto } from "./dto/create-track.dto";
 import { ObjectId } from "mongoose";
-import { CreateCommentDto } from "./dto/create-comment.dto";
+import { AddCommentDto } from "./dto/add-comment.dto";
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
 
 @Controller("track")
@@ -49,7 +49,7 @@ export class TrackController {
 
 
   @Post("/comment")
-  addComment(@Body() dto: CreateCommentDto) {
+  addComment(@Body() dto: AddCommentDto) {
     return this.trackService.addComment(dto);
   }
 
